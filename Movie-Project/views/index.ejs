@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie app</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+/* NAVIGATION BAR */
+header {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    color: white;
+}
+
+.logo img {
+    height: 60px;
+    width: 200px;
+}
+
+.search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar input {
+    width: 50%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    transition: width 0.3s ease-in-out;
+    border-color: black;
+    background-color: #e4e1e1;
+}
+
+.search-bar input:focus {
+    width: 70%;
+    background-color: #e4e1e1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-color: black;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: rgb(228, 47, 47);
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.location i{
+    border: solid rgb(228, 47, 47);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 5px;
+    transform: rotate(45deg);
+    margin-left: 5px;
+}
+
+.sign-in button {
+    background-color: #222;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+.sign-in button:hover {
+    background-color: #333;
+}
+
+.menu-icon .hamburger {
+    display: none;
+}
+
+/* SUB MENU */
+.sub-menu {
+    background-color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sub-menu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 0 20px;
+    transition: color 0.3s ease;
+}
+
+.sub-menu a:hover {
+    color: #ff5c5c;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.movie-card {
+    width: 300px;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.poster {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.rating {
+    background-color: #343a40;
+    color: #f1f1f1;
+    padding: 8px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating .star {
+    color: #ffd700;
+    font-size: 22px;
+}
+
+.rating-score {
+    font-size: 18px;
+}
+
+.title {
+    font-size: 1.2em;
+    margin: 12px 0;
+    color: #212529;
+    padding: 0 12px;
+}
+
+.genre {
+    color: #495057;
+    font-size: 0.95em;
+    padding-bottom: 12px;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.card-button {
+    padding: 8px 12px;
+    font-size: 0.9em;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.card-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .search-bar {
+        margin-bottom: 10px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .search-bar input {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .sign-in {
+        margin-top: 10px;
+    }
+
+    .menu-icon .hamburger {
+        display: inline-block;
+        background-color: white;
+        width: 30px;
+        height: 3px;
+        position: relative;
+    }
+
+    .menu-icon .hamburger:before,
+    .menu-icon .hamburger:after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        left: 0;
+    }
+
+    .menu-icon .hamburger:before {
+        top: -10px;
+    }
+
+    .menu-icon .hamburger:after {
+        top: 10px;
+    }
+
+    .sub-menu {
+        display: none;
+    }
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#"><img src="https://getlogo.net/wp-content/uploads/2020/04/bookmyshow-logo-vector.png" alt="BookMyShow Logo"></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for Movies, Events, Plays, Sports and Activities">
+            </div>
+            <div class="location">
+                <span>Rajkot</span> <i class="arrow-down"></i>
+            </div>
+            <div class="sign-in">
+                <a href="/form"><button>Add data</button>
+                </a>
+            </div>
+            <div class="menu-icon">
+                <i class="hamburger"></i>
+            </div>
+        </div>
+        <nav class="sub-menu">
+            <a href="#">Movies</a>
+            <a href="#">Stream</a>
+            <a href="#">Events</a>
+            <a href="#">Plays</a>
+            <a href="#">Sports</a>
+            <a href="#">Corporates</a>
+            <a href="#">Offers</a>
+            <a href="#">Gift Cards</a>
+        </nav>
+        <div class="card-container">
+            <% data.map((el, i) => { %>
+            <div class="movie-card">
+                <img src="<%= el.image %>" alt="<%= el.name %>" class="poster">
+                <div class="rating">
+                    <span class="star">&#9733;</span>
+                    <span class="rating-score"><%= el.rating %>/10</span>
+                    
+                </div>
+                <h3 class="title"><%= el.name %></h3>
+                <div class="genre"><%= el.movietype %></div>
+                <div class="card-actions">
+                    <a href="/deletemovie?id=<%= el.id %>"><button class="card-button">Delete</button></a>
+                    <a href="/editdmovie?id=<%= el.id %>"><button class="card-button">Edit</button></a>
+                </div>
+            </div>
+            <% }) %>
+        </div>
+        
+    </header>
+</body>
+</html>

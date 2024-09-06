@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    /* General Form Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1e1e2f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #ffcc00;
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+form {
+    background-color: #282846;
+    padding: 40px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Input Field Styling */
+input[type="file"],
+input[type="text"],
+input[type="number"] {
+    background-color: #3a3a55;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #ffd633;
+}
+
+input[type="text"],
+input[type="number"] {
+    background-color: #343454;
+    color: #fff;
+    outline: none;
+    border-bottom: 2px solid transparent;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    background-color: #444466;
+    border-bottom: 2px solid #ffcc00;
+    transform: scale(1.02);
+}
+
+/* Placeholder Text Styling */
+input::placeholder {
+    color: #aaa;
+    opacity: 0.8;
+    font-size: 0.9em;
+}
+
+/* Submit Button Styling */
+input[type="submit"] {
+    background-color: #ffcc00;
+    color: #1e1e2f;
+    padding: 14px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #ffd633;
+    transform: translateY(-3px);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+    background-color: #e6b800;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>Movie App</h1>
+    <form action="/insert" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input type="text" name="name" placeholder="enter movie name">
+        <input type="text" name="movietype" placeholder="Enter movie type">
+        <input type="number" name="rating" placeholder="Enter rating" >
+        
+        <input type="submit">
+    </form>
+    
+</body>
+</html>
