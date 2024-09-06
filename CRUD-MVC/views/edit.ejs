@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Data</title>
+    <!-- <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #444;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        form input[type="text"],
+        form input[type="file"] {
+            padding: 15px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            transition: border-color 0.3s ease;
+            background-color: #f9f9f9;
+        }
+
+        form input[type="text"]:focus,
+        form input[type="file"]:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        form input[type="submit"] {
+            padding: 15px;
+            background-color: #3498db;
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+    </style> -->
+</head>
+<body>
+    <div class="container">
+        <h1>Update Data</h1>
+        <form action="/updateData?id=<%=editschema.id%>" method="post" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Enter name" value="<%=editschema.name%>">
+            <input type="text" name="subject" placeholder="Enter subject" value="<%=editschema.subject%>">
+            <input type="file" name="image">
+            <img src="<%=editschema.image%>" alt="Current Image">
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</body>
+</html>

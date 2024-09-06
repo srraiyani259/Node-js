@@ -1,11 +1,12 @@
-module.exports.form = (req , res)=>{
-    res.render("form")
+module.exports.index = (req , res)=>{
+    res.render("index")
 }
 
-module.exports.home = (req , res)=>{
-    res.render("home")
-}
-
-module.exports.about = (req , res)=>{
-    res.render("about")
+module.exports.edit = async(req , res)=>{
+    try{
+        await res.render("edit")
+    }
+    catch(err){
+        console.log("error found while rendering edit" + err);
+    }
 }

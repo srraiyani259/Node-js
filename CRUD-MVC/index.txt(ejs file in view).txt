@@ -1,0 +1,27 @@
+ <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Subject</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.map((el,i)=>{  %>
+                    <tr>
+                        <td><%=el.name%></td>
+                        <td><%=el.subject%></td>
+                        <td><img src="<%=el.image%>" alt=""></td>
+                        <td class="action-buttons">
+                            <a href="/deleteData?id=<%=el.id%>">
+                                <button class="delete-button">Delete</button>
+                            </a>
+                            <a href="/editData?id=<%=el.id%>">
+                                <button class="edit-button">Edit</button>
+                            </a>
+                        </td>
+                    </tr>
+                <% })%>
+            </tbody>
+        </table>
