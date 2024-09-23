@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SeoDash Free Bootstrap Admin Template by Adminmart</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/images/logos/seodashlogo.png" />
+  <link rel="stylesheet" href="../../node_modules/simplebar/dist/simplebar.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.min.css" />
+</head>
+
+<style>
+  /* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.body-wrapper {
+  padding: 2rem;
+  background-color: #fff;
+}
+
+h5.card-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 1.5rem;
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table th, .table td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+}
+
+.table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table tbody td {
+  color: #333;
+}
+
+/* Action Buttons */
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Footer */
+.py-6.px-6.text-center {
+  background-color: #007bff;
+  color: white;
+  padding: 2rem 0;
+  font-size: 1.2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .table th, .table td {
+    padding: 0.75rem;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-wrapper {
+    padding: 1rem;
+  }
+}
+
+</style>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <%-include("aside")%>
+
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+      <%-include("header")%>
+
+      <!--  Header End -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title mb-0">Static Table</h5>
+            </div>
+            <table class="table">
+              <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Company Email</th>
+                <th>Contact No.</th>
+               
+                <th>Actions</th>
+              </tr>  
+              </thead>
+              <tbody>
+                <% data.map((el,i)=>{ %>
+                  <tr>
+                    <td><%=el.fname%></td>
+                    <td><%=el.lname%></td>
+                    <td><%=el.email%></td>
+                    <td><%=el.number%></td>
+
+                    <td>
+                      <a href="/deletedata?id=<%=el.id%>"><button class="btn btn-primary">Delete</button></a>
+
+                      <a href="/editdata?id=<%=el.id%>"><button class="btn btn-primary">Edit</button></a>
+                  </td>
+                  </tr>
+           <%     })%>
+               </tbody>
+            </table>
+          </div>
+        
+         
+          
+        </div>
+      </div>
+      <!-- ============================================================== -->
+      <!-- End PAge Content -->
+      <!-- ============================================================== -->
+      <!-- ============================================================== -->
+      <!-- Right sidebar -->
+      <!-- ============================================================== -->
+      <!-- .right-sidebar -->
+      <!-- ============================================================== -->
+      <!-- End Right sidebar -->
+      <!-- ============================================================== -->
+    </div>
+      <div class="py-6 px-6 text-center">
+          <p class="mb-0 fs-4">Design and Developed by Shreyas Raiyani</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  <script src="../assets/js/sidebarmenu.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+</body>
+
+</html>
