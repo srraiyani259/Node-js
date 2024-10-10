@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* General form styling */
+        body {
+            background-color: #e0f7fa; /* Light cyan background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* New font family */
+        }
+
+        form {
+            background: #ffffff; /* White background */
+            padding: 40px;
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            width: 100%;
+            max-width: 450px; /* Increased max-width */
+            border: 1px solid #b2ebf2; /* Border around the form */
+        }
+
+        /* Input group styling */
+        .input-group {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-group-text {
+            background-color: #00796b; /* Teal background */
+            color: #ffffff; /* White text */
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            height: calc(2.5rem + 4px);
+            font-size: 1.1rem;
+            padding: 0.6rem;
+            border: 1px solid #b2ebf2;
+            border-left: none;
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+            flex-grow: 1;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #004d40;
+            box-shadow: 0 0 0 0.2rem rgba(0, 150, 136, 0.25); /* Darker focus color */
+            outline: none;
+        }
+
+        .form-control::placeholder {
+            color: #78909c; /* Grayish blue placeholder text */
+        }
+
+        /* Button styling */
+        .btn {
+            padding: 0.6rem 1.2rem;
+            font-size: 1.1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            border: none;
+            display: inline-block;
+            color: #fff;
+        }
+
+        .btn-success {
+            background-color: #0288d1; /* Blue background for back button */
+            margin-right: 10px;
+        }
+
+        .btn-success:hover {
+            background-color: #0277bd; /* Slightly darker blue on hover */
+            transform: translateY(-2px);
+        }
+
+        .btn-info {
+            background-color: #00796b; /* Teal background for recover button */
+            float: right;
+        }
+
+        .btn-info:hover {
+            background-color: #004d40; /* Darker teal on hover */
+            transform: translateY(-2px);
+        }
+
+        /* Additional styles for form elements */
+        .border-top {
+            border-top: 2px solid #00796b; /* Teal border-top */
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+
+        .text-white {
+            color: #ffffff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Responsive design */
+        @media (max-width: 576px) {
+            form {
+                padding: 20px;
+            }
+
+            .btn-success,
+            .btn-info {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .btn-info {
+                float: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="/forgotpass" method="post">
+        <!-- email -->
+        <div class="input-group">
+            <span class="input-group-text" id="basic-addon1">Email</span> &nbsp;&nbsp;&nbsp;&nbsp;
+            <input
+                type="text"
+                placeholder="Email Address"
+                aria-label="Username"
+                aria-describedby="basic-addon1"
+                name="email"
+                class="form-control"
+            />
+        </div>
+        <!-- Buttons section -->
+        <div class="border-top">
+            <a class="btn btn-success" href="/logout" id="to-login">Back To Login</a>
+            <button class="btn btn-info" type="submit">Recover</button>
+        </div>
+    </form>
+</body>
+</html>
